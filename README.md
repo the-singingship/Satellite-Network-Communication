@@ -8,20 +8,50 @@ in Low Earth Orbit (LEO).
 
 ---
 
+## Quick Start
+
+**Prerequisites:** Python 3.10 or higher (uses only the standard library — no `pip install` needed).
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/the-singingship/Satellite-Network-Communication.git
+cd Satellite-Network-Communication
+
+# 2. (Optional) Verify your Python version
+python3 --version   # should print 3.10 or above
+
+# 3. Launch all five processes at once
+python3 run_demo.py
+
+# 4. Run the test suite
+python3 -m unittest discover -s tests -v
+```
+
+`run_demo.py` starts every component (sensor emulator, actuator controller,
+LEO satellite relay, ground control station, and discovery service) in one
+terminal. Press **Ctrl-C** to stop all processes. Logs are written to the
+`logs/` directory.
+
+See [How to Run](#how-to-run) for advanced options like running each process
+in its own terminal or tuning the orbital simulation speed.
+
+---
+
 ## Table of Contents
 
-1. [System Overview](#system-overview)
-2. [Project Structure](#project-structure)
-3. [Protocol Design — TWCP](#protocol-design--twcp)
+1. [Quick Start](#quick-start)
+2. [System Overview](#system-overview)
+3. [Project Structure](#project-structure)
+4. [Protocol Design — TWCP](#protocol-design--twcp)
    - [Frame Format](#frame-format)
    - [Message Types](#message-types)
    - [State Machine](#state-machine)
-4. [Channel Model](#channel-model)
-5. [Reliability Layer](#reliability-layer)
-6. [Discovery & Negotiation](#discovery--negotiation)
-7. [Bonus Tasks](#bonus-tasks)
-8. [How to Run](#how-to-run)
-9. [Running Tests](#running-tests)
+5. [Channel Model](#channel-model)
+6. [Reliability Layer](#reliability-layer)
+7. [Discovery & Negotiation](#discovery--negotiation)
+8. [Bonus Tasks](#bonus-tasks)
+9. [How to Run](#how-to-run)
+10. [Running Tests](#running-tests)
 
 ---
 
